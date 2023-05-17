@@ -1,12 +1,28 @@
 import { getNestedValue } from './getNestedValue';
 import { getCalculatedValue } from './getCalculatedValue';
+import { getAllKeys } from './getAllKeys';
 
 const getValue = (value: string, tokens: any): string => {
+  const allKeys = getAllKeys(tokens);
+
   if (value.indexOf('{') === 0 && value.indexOf('}') === value.length - 1) {
+    value = allKeys.filter((item) => {
+      return item.includes(value.replace('{', '').replace('}', ''));
+    })[0];
+
     value = getNestedValue(
       tokens,
       value.replace('{', '').replace('}', '')
     ).value;
+
+    if (
+      value.includes('*') ||
+      value.includes('/') ||
+      value.includes('+') ||
+      value.includes('-')
+    ) {
+      value = getCalculatedValue(value, tokens).toString();
+    }
 
     // getValue(value, tokens);
   } else if (

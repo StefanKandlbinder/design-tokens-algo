@@ -68,7 +68,7 @@ const doMath = (calc: Calc): number => {
 };
 
 export const getCalculatedValue = (value: string, tokens: any) => {
-  let calculated: number = 0;
+  let result: number = 0;
   let calc: Calc;
   let calculations: string[] = [];
 
@@ -103,46 +103,47 @@ export const getCalculatedValue = (value: string, tokens: any) => {
           value = calculations[calculations.length - 1];
         }
       }
-    }
+    } else {
+      calc = splitMath(value);
 
-    calc = splitMath(value);
+      if (calc.left.includes('{')) {
+        if (calculations[calculations.length - 1] !== value) {
+          calculations.push(value);
+        }
+        calc.left = calc.left.replace('{', '').replace('}', '');
+        const result = allKeys.filter((item) => {
+          if (item === calc.left) {
+            return item;
+          } else {
+            return item.includes(calc.left);
+          }
+        });
+        calc.left = getNestedValue(tokens, result[0]).value;
+        value = calc.left;
+        traverse(value, calc, calculated);
+      }
+      if (calc.right.includes('{')) {
+        if (calculations[calculations.length - 1] !== value) {
+          calculations.push(value);
+        }
+        calc.right = calc.right.replace('{', '').replace('}', '');
+        const result = allKeys.filter((item) => {
+          if (item === calc.right) {
+            return item;
+          } else {
+            return item.includes(calc.right);
+          }
+        });
+        calc.right = getNestedValue(tokens, result[0]).value;
+        value = calc.right;
+        traverse(value, calc, calculated);
+      }
 
-    if (calc.left.includes('{')) {
-      if (calculations[calculations.length - 1] !== value) {
-        calculations.push(value);
-      }
-      calc.left = calc.left.replace('{', '').replace('}', '');
-      const result = allKeys.filter((item) => {
-        if (item === calc.left) {
-          return item;
-        } else {
-          return item.includes(calc.left);
-        }
-      });
-      calc.left = getNestedValue(tokens, result[0]).value;
-      value = calc.left;
-      traverse(value, calc, calculated);
-    }
-    if (calc.right.includes('{')) {
-      if (calculations[calculations.length - 1] !== value) {
-        calculations.push(value);
-      }
-      calc.right = calc.right.replace('{', '').replace('}', '');
-      const result = allKeys.filter((item) => {
-        if (item === calc.right) {
-          return item;
-        } else {
-          return item.includes(calc.right);
-        }
-      });
-      calc.right = getNestedValue(tokens, result[0]).value;
-      value = calc.right;
-      traverse(value, calc, calculated);
+      result = doMath(calc);
     }
   };
 
-  traverse(value, calc, calculated);
+  traverse(value, calc, 0);
 
-  let result = splitMath(calculations[0]);
-  return doMath(result);
+  return calculations.length ? doMath(splitMath(calculations[0])) : result;
 };

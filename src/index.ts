@@ -1,17 +1,17 @@
 // Import stylesheets
 import './style.css';
-import { tokens } from './tests/tokens/calculatedTokens';
+import { tokens } from './tests/tokens/testTokens';
 import { getFindings } from './utils/getFindings';
 import { getValuesByType } from './utils/getValuesByType';
 import { getAllKeys } from './utils/getAllKeys';
 import { getCalculatedValue } from './utils/getCalculatedValue';
 import { getNestedValue } from './utils/getNestedValue';
 
-const allKeys = getAllKeys(tokens);
+// const allKeys = getAllKeys(tokens);
 
-console.log(allKeys);
+// console.log(allKeys);
 
-allKeys.map((key: any) => {
+/* allKeys.map((key: any) => {
   const result = allKeys.filter((item) => {
     if (item === key) {
       return item;
@@ -19,17 +19,13 @@ allKeys.map((key: any) => {
       return item.includes(key);
     }
   });
-});
+  // console.log(key, getNestedValue(tokens, result[0]).value);
+}); */
 
 const set = 'global';
 const types = getFindings(tokens[set], 'type');
 
 types.map((type) => {
-  const values = getValuesByType(
-    tokens['global']['spacing']['scale'],
-    type,
-    tokens
-  );
-
+  const values = getValuesByType(tokens['global'], type, tokens);
   console.log(type, values);
 });

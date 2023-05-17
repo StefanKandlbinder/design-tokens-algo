@@ -9,6 +9,10 @@ export const tokens = {
         value: '{global.spacing.scale} * {global.spacing.scale}',
         type: 'spacing',
       },
+      '025': {
+        value: '{spacing.scale}',
+        type: 'spacing',
+      },
       scale: {
         value: '{global.spacing.100} / 4',
         type: 'spacing',
