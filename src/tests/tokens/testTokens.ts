@@ -1,5 +1,79 @@
 export const tokens = {
   global: {
+    sizing: {
+      100: {
+        value: '16',
+        type: 'sizing',
+      },
+      125: {
+        value: '{sizing.scale} * 5',
+        type: 'sizing',
+      },
+      150: {
+        value: '{sizing.scale} * 6',
+        type: 'sizing',
+      },
+      175: {
+        value: '{sizing.scale} * 7',
+        type: 'sizing',
+      },
+      200: {
+        value: '{sizing.scale} * 8',
+        type: 'sizing',
+      },
+      225: {
+        value: '{sizing.scale} * 9',
+        type: 'sizing',
+      },
+      250: {
+        value: '{sizing.scale} * 10',
+        type: 'sizing',
+      },
+      275: {
+        value: '{sizing.scale} * 11',
+        type: 'sizing',
+      },
+      300: {
+        value: '{sizing.scale} * 12',
+        type: 'sizing',
+      },
+      350: {
+        value: '{sizing.scale} * 14',
+        type: 'sizing',
+      },
+      400: {
+        value: '{sizing.scale} * 16',
+        type: 'sizing',
+      },
+      450: {
+        value: '{sizing.scale} * 18',
+        type: 'sizing',
+      },
+      500: {
+        value: '{sizing.scale} * 20',
+        type: 'sizing',
+      },
+      scale: {
+        value: '{sizing.100} / 4',
+        type: 'sizing',
+      },
+      '025': {
+        value: '{sizing.scale}',
+        type: 'sizing',
+      },
+      '050': {
+        value: '{sizing.scale} * 2',
+        type: 'sizing',
+      },
+      '075': {
+        value: '{sizing.scale} * 3',
+        type: 'sizing',
+      },
+      '087': {
+        value: '{sizing.scale} * 3.5',
+        type: 'sizing',
+      },
+    },
     spacing: {
       100: {
         value: '16',
@@ -1063,6 +1137,716 @@ export const tokens = {
       },
     },
   },
+  'c-container': {
+    container: {
+      color: {
+        background: {
+          value: '{colors.gray.200}',
+          type: 'color',
+        },
+        border: {
+          value: '{colors.gray.900}',
+          type: 'color',
+        },
+      },
+      borderRadius: {
+        value: '{borderRadius.100}',
+        type: 'borderRadius',
+      },
+      borderWidth: {
+        value: '{sizing.050}',
+        type: 'borderWidth',
+      },
+      boxShadow: {
+        x: {
+          value: '8',
+          type: 'x',
+        },
+        y: {
+          value: '8',
+          type: 'y',
+        },
+        blur: {
+          value: '0',
+          type: 'blur',
+        },
+        spread: {
+          value: '0',
+          type: 'spread',
+        },
+        color: {
+          value: 'rgba(0,0,0,0.25)',
+          type: 'color',
+        },
+        type: {
+          value: 'dropShadow',
+          type: 'type',
+        },
+      },
+      spacingTop: {
+        value: '{spacing.200}',
+        type: 'spacing',
+      },
+      spacingBottom: {
+        value: '{spacing.200}',
+        type: 'spacing',
+      },
+      spacingLeft: {
+        value: '{spacing.200}',
+        type: 'spacing',
+      },
+      spacingRight: {
+        value: '{spacing.200}',
+        type: 'spacing',
+      },
+      gap: {
+        value: '{spacing.075}',
+        type: 'spacing',
+      },
+      header: {
+        color: {
+          value: '{colors.gray.900}',
+          type: 'color',
+        },
+        fontFamily: {
+          value: '{semantic.fontFamilies.heading}',
+          type: 'fontFamilies',
+        },
+      },
+    },
+  },
+  'c-content': {
+    content: {
+      header: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.white}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.heading}',
+              fontSize: '{fontSizes.150}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.175}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.heading}',
+              fontSize: '{fontSizes.100}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.175}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      subheader: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.subheading}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.subheading}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      underline: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.500}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.300}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.subtle}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.uppercase}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.subheading}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.uppercase}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      text: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.body}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.body}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      list: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.body}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.body}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+    },
+  },
+  'c-level': {
+    level: {
+      color: {
+        bar: {
+          default: {
+            value: '{colors.gray.600}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+        },
+        background: {
+          default: {
+            value: '{colors.gray.300}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.gray.100}',
+            type: 'color',
+          },
+        },
+      },
+      opacity: {
+        background: {
+          default: {
+            value: '{opacity.50}',
+            type: 'opacity',
+          },
+        },
+      },
+      height: {
+        default: {
+          value: '{sizing.025}',
+          type: 'sizing',
+        },
+      },
+      borderRadius: {
+        default: {
+          value: '{borderRadius.025}',
+          type: 'borderRadius',
+        },
+      },
+    },
+  },
+  'c-main': {
+    main: {
+      color: {
+        background: {
+          value: '{colors.white}',
+          type: 'color',
+        },
+      },
+    },
+  },
+  'c-sidebar': {
+    sidebar: {
+      color: {
+        background: {
+          value: '{colors.red.700}',
+          type: 'color',
+        },
+      },
+    },
+  },
+  'c-skills': {
+    skills: {
+      color: {
+        text: {
+          default: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+        },
+        background: {
+          default: {
+            value: '{colors.transparent}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.transparent}',
+            type: 'color',
+          },
+        },
+      },
+      typography: {
+        heading: {
+          default: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.heading}',
+              fontSize: '{fontSizes.100}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.heading}',
+              fontSize: '{fontSizes.100}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+      spacing: {
+        default: {
+          top: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+          right: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+          bottom: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+          left: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+        },
+        medium: {
+          top: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+          right: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+          bottom: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+          left: {
+            value: '{spacing.0}',
+            type: 'spacing',
+          },
+        },
+      },
+    },
+  },
+  'c-skill': {
+    skill: {
+      color: {
+        text: {
+          default: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+        },
+      },
+      typography: {
+        text: {
+          default: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.subheading}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.subheading}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+    },
+  },
   't-sydney': {
     avatar: {
       color: {
@@ -1465,6 +2249,1824 @@ export const tokens = {
               fontWeight: '{fontWeights.regular}',
               letterSpacing: '{letterSpacing.0}',
               lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+    },
+  },
+  't-stockholm': {
+    avatar: {
+      color: {
+        default: {
+          name: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          title: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+        },
+        background: {
+          value: '{colors.transparent}',
+          type: 'color',
+        },
+      },
+      typography: {
+        name: {
+          value: {
+            fontFamily: 'Source Sans Pro',
+            fontSize: '{fontSizes.150}',
+            fontWeight: '{fontWeights.semiBold}',
+            lineHeight: '{lineHeights.200}',
+            textCase: '{textCases.asTyped}',
+          },
+          type: 'typography',
+        },
+        title: {
+          value: {
+            fontFamily: 'Source Sans Pro',
+            fontSize: '{fontSizes.075}',
+            fontWeight: '{fontWeights.regular}',
+            lineHeight: '{lineHeights.100}',
+            textCase: '{textCases.asTyped}',
+          },
+          type: 'typography',
+        },
+      },
+    },
+    content: {
+      header: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.white}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.125}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.175}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.100}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.175}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      subheader: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      underline: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.500}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.300}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.150}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.150}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      text: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      list: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+    },
+    level: {
+      color: {
+        bar: {
+          default: {
+            value: '{colors.blue.500}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.gray.600}',
+            type: 'color',
+          },
+        },
+        background: {
+          default: {
+            value: '{colors.gray.300}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.gray.300}',
+            type: 'color',
+          },
+        },
+      },
+      opacity: {
+        background: {
+          value: '{opacity.50}',
+          type: 'opacity',
+        },
+      },
+      height: {
+        value: '{sizing.025}',
+        type: 'sizing',
+      },
+      borderRadius: {
+        value: '0',
+        type: 'borderRadius',
+      },
+    },
+    sidebar: {
+      color: {
+        background: {
+          value: '{colors.white}',
+          type: 'color',
+        },
+      },
+    },
+    skills: {
+      color: {
+        text: {
+          value: '{colors.white}',
+          type: 'color',
+        },
+      },
+      typography: {
+        heading: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.100}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.100}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+    },
+    skill: {
+      color: {
+        text: {
+          default: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+        },
+      },
+      typography: {
+        text: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+    },
+  },
+  't-newyork': {
+    avatar: {
+      color: {
+        default: {
+          name: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          title: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+        },
+        background: {
+          value: '{colors.transparent}',
+          type: 'color',
+        },
+      },
+      typography: {
+        name: {
+          value: {
+            fontFamily: 'Oswald',
+            fontSize: '{fontSizes.150}',
+            fontWeight: '{fontWeights.regular}',
+            lineHeight: '{lineHeights.250}',
+            textCase: '{textCases.uppercase}',
+          },
+          type: 'typography',
+        },
+        title: {
+          value: {
+            fontFamily: 'Source Sans Pro',
+            fontSize: '{fontSizes.075}',
+            fontWeight: '{fontWeights.regular}',
+            lineHeight: '{lineHeights.100}',
+            textCase: '{textCases.uppercase}',
+          },
+          type: 'typography',
+        },
+      },
+    },
+    content: {
+      header: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.white}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Oswald',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.175}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Oswald',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.175}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      subheader: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.semiBold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      underline: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.500}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.300}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.150}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.150}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      text: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      list: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '19',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+    },
+    level: {
+      color: {
+        bar: {
+          default: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.gray.600}',
+            type: 'color',
+          },
+        },
+        background: {
+          default: {
+            value: '{colors.gray.300}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.gray.300}',
+            type: 'color',
+          },
+        },
+      },
+      opacity: {
+        background: {
+          value: '{opacity.50}',
+          type: 'opacity',
+        },
+      },
+      height: {
+        value: '{sizing.025}',
+        type: 'sizing',
+      },
+      borderRadius: {
+        value: '0',
+        type: 'borderRadius',
+      },
+    },
+    sidebar: {
+      color: {
+        background: {
+          value: '{colors.white}',
+          type: 'color',
+        },
+      },
+    },
+    skills: {
+      color: {
+        text: {
+          value: '{colors.white}',
+          type: 'color',
+        },
+      },
+      typography: {
+        heading: {
+          default: {
+            value: {
+              fontFamily: 'Oswald',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: 'Oswald',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+    },
+    skill: {
+      color: {
+        text: {
+          default: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+        },
+      },
+      typography: {
+        text: {
+          default: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: 'Source Sans Pro',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+    },
+  },
+  't-madrid': {
+    avatar: {
+      color: {
+        default: {
+          name: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          title: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+        },
+        background: {
+          value: '{colors.yellow.500}',
+          type: 'color',
+        },
+      },
+      typography: {
+        name: {
+          value: {
+            fontFamily: 'Lato',
+            fontSize: '{fontSizes.150}',
+            fontWeight: '{fontWeights.bold}',
+            lineHeight: '{lineHeights.175}',
+            textCase: '{textCases.uppercase}',
+          },
+          type: 'typography',
+        },
+        title: {
+          value: {
+            fontFamily: 'Lato',
+            fontSize: '{fontSizes.075}',
+            fontWeight: '{fontWeights.regular}',
+            lineHeight: '{lineHeights.100}',
+            textCase: '{textCases.asTyped}',
+          },
+          type: 'typography',
+        },
+      },
+    },
+    content: {
+      header: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.white}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.white}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.black}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.black}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.012}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.050}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.050}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.050}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      subheader: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: '{semantic.fontFamilies.subheading}',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.1}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.025}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      underline: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.500}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.300}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.uppercase}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.uppercase}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      text: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+      list: {
+        color: {
+          text: {
+            default: {
+              value: '{colors.gray.900}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.gray.100}',
+              type: 'color',
+            },
+          },
+          background: {
+            default: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+            negative: {
+              value: '{colors.transparent}',
+              type: 'color',
+            },
+          },
+        },
+        typography: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          medium: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.075}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+        spacing: {
+          default: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+          medium: {
+            top: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            right: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            bottom: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+            left: {
+              value: '{spacing.0}',
+              type: 'spacing',
+            },
+          },
+        },
+      },
+    },
+    level: {
+      color: {
+        bar: {
+          default: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.gray.600}',
+            type: 'color',
+          },
+        },
+        background: {
+          default: {
+            value: '{colors.gray.300}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.gray.300}',
+            type: 'color',
+          },
+        },
+      },
+      opacity: {
+        background: {
+          value: '{opacity.50}',
+          type: 'opacity',
+        },
+      },
+      height: {
+        value: '{sizing.025}',
+        type: 'sizing',
+      },
+      borderRadius: {
+        value: '0',
+        type: 'borderRadius',
+      },
+    },
+    sidebar: {
+      color: {
+        background: {
+          value: '{colors.white}',
+          type: 'color',
+        },
+      },
+    },
+    skills: {
+      color: {
+        text: {
+          default: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+        },
+        background: {
+          default: {
+            value: '{colors.black}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.black}',
+            type: 'color',
+          },
+        },
+      },
+      typography: {
+        heading: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.087}',
+              fontWeight: '{fontWeights.bold}',
+              letterSpacing: '{letterSpacing.2}',
+              lineHeight: '{lineHeights.100}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+        },
+      },
+      spacing: {
+        default: {
+          top: {
+            value: '{spacing.012}',
+            type: 'spacing',
+          },
+          right: {
+            value: '{spacing.050}',
+            type: 'spacing',
+          },
+          bottom: {
+            value: '{spacing.050}',
+            type: 'spacing',
+          },
+          left: {
+            value: '{spacing.050}',
+            type: 'spacing',
+          },
+        },
+        medium: {
+          top: {
+            value: '{spacing.012}',
+            type: 'spacing',
+          },
+          right: {
+            value: '{spacing.050}',
+            type: 'spacing',
+          },
+          bottom: {
+            value: '{spacing.050}',
+            type: 'spacing',
+          },
+          left: {
+            value: '{spacing.050}',
+            type: 'spacing',
+          },
+        },
+      },
+    },
+    skill: {
+      color: {
+        text: {
+          default: {
+            value: '{colors.gray.900}',
+            type: 'color',
+          },
+          negative: {
+            value: '{colors.white}',
+            type: 'color',
+          },
+        },
+      },
+      typography: {
+        text: {
+          default: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
+              textCase: '{textCases.asTyped}',
+            },
+            type: 'typography',
+          },
+          negative: {
+            value: {
+              fontFamily: 'Lato',
+              fontSize: '{fontSizes.064}',
+              fontWeight: '{fontWeights.regular}',
+              letterSpacing: '{letterSpacing.0}',
+              lineHeight: '{lineHeights.087}',
               textCase: '{textCases.asTyped}',
             },
             type: 'typography',

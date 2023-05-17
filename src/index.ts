@@ -22,10 +22,10 @@ import { getNestedValue } from './utils/getNestedValue';
   // console.log(key, getNestedValue(tokens, result[0]).value);
 }); */
 
-const set = 'global';
+const set = 't-stockholm';
 const types = getFindings(tokens[set], 'type');
 
 types.map((type) => {
-  const values = getValuesByType(tokens['global'], type, tokens);
+  const values = getValuesByType(tokens[set], type, tokens);
   console.log(type, values);
 });
