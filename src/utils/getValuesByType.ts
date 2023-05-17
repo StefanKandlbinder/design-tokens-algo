@@ -1,129 +1,6 @@
 import { getNestedValue } from './getNestedValue';
 import { getCalculatedValue } from './getCalculatedValue';
 
-/* const getCalculatedValue = (value: string, tokens: any): string => {
-  let math: string = '';
-  let left: string = '';
-  let right: string = '';
-  let calculated: string = '';
-
-  if (value.includes('+')) {
-    math = '+';
-    let split = value.split('+');
-    left = split[0].trim();
-    right = split[1].trim();
-  }
-  if (value.includes('-')) {
-    math = '-';
-    let split = value.split('-');
-    left = split[0].trim();
-    right = split[1].trim();
-  }
-  if (value.includes('*')) {
-    math = '*';
-    let split = value.split('*');
-    left = split[0].trim();
-    right = split[1].trim();
-  }
-  if (value.includes('/')) {
-    math = '/';
-    let split = value.split('/');
-    left = split[0].trim();
-    right = split[1].trim();
-  }
-
-  console.log(
-    'value: ',
-    value,
-    'left: ',
-    left,
-    'math: ',
-    math,
-    'right: ',
-    right
-  );
-
-  const traverse = (left: string, math: string, right: string) => {
-    // console.log(left, math, right);
-
-    if (value.includes('+')) {
-      math = '+';
-      let split = value.split('+');
-      left = split[0].trim();
-      right = split[1].trim();
-    }
-    if (value.includes('-')) {
-      math = '-';
-      let split = value.split('-');
-      left = split[0].trim();
-      right = split[1].trim();
-    }
-    if (value.includes('*')) {
-      math = '*';
-      let split = value.split('*');
-      left = split[0].trim();
-      right = split[1].trim();
-    }
-    if (value.includes('/')) {
-      math = '/';
-      let split = value.split('/');
-      left = split[0].trim();
-      right = split[1].trim();
-    }
-
-    if (left.indexOf('{') === 0 && left.indexOf('}') === left.length - 1) {
-      left = getNestedValue(
-        tokens,
-        left.replace('{', '').replace('}', '')
-      ).value;
-
-      left = traverse(left, math, right);
-    } else {
-      left = getNestedValue(
-        tokens,
-        left.replace('{', '').replace('}', '')
-      ).value;
-    }
-    if (right.indexOf('{') === 0 && right.indexOf('}') === right.length - 1) {
-      right = getNestedValue(
-        tokens,
-        right.replace('{', '').replace('}', '')
-      ).value;
-
-      right = traverse(left, math, right);
-    } else {
-      right = getNestedValue(
-        tokens,
-        right.replace('{', '').replace('}', '')
-      ).value;
-    }
-
-    if (value.includes('+')) {
-      calculated = (parseFloat(left) + parseFloat(right)).toString();
-    }
-
-    if (value.includes('-')) {
-      calculated = (parseFloat(left) - parseFloat(right)).toString();
-    }
-
-    if (value.includes('*')) {
-      calculated = (parseFloat(left) * parseFloat(right)).toString();
-    }
-
-    if (value.includes('/')) {
-      calculated = (parseFloat(left) / parseFloat(right)).toString();
-    }
-
-    // return calculated;
-  };
-
-  traverse(left, math, right);
-
-  console.log(value);
-
-  return calculated;
-}; */
-
 const getValue = (value: string, tokens: any): string => {
   if (value.indexOf('{') === 0 && value.indexOf('}') === value.length - 1) {
     value = getNestedValue(
@@ -131,7 +8,7 @@ const getValue = (value: string, tokens: any): string => {
       value.replace('{', '').replace('}', '')
     ).value;
 
-    getValue(value, tokens);
+    // getValue(value, tokens);
   } else if (
     value.includes('*') ||
     value.includes('/') ||

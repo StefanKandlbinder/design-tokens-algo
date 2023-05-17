@@ -6,7 +6,7 @@ export const tokens = {
         type: 'spacing',
       },
       125: {
-        value: '{global.spacing.scale} * 5',
+        value: '{global.spacing.scale} * {global.spacing.scale}',
         type: 'spacing',
       },
       scale: {

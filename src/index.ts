@@ -7,11 +7,11 @@ import { getAllKeys } from './utils/getAllKeys';
 import { getCalculatedValue } from './utils/getCalculatedValue';
 import { getNestedValue } from './utils/getNestedValue';
 
-// const allKeys = getAllKeys(tokens);
+const allKeys = getAllKeys(tokens);
 
-// console.log(allKeys);
+console.log(allKeys);
 
-/* allKeys.map((key: any) => {
+allKeys.map((key: any) => {
   const result = allKeys.filter((item) => {
     if (item === key) {
       return item;
@@ -19,17 +19,17 @@ import { getNestedValue } from './utils/getNestedValue';
       return item.includes(key);
     }
   });
-  console.log(key, getNestedValue(tokens, result[0]).value);
-}); */
+});
 
-/* const set = 'global';
+const set = 'global';
 const types = getFindings(tokens[set], 'type');
 
 types.map((type) => {
-  const values = getValuesByType(tokens[set], type, tokens.global);
+  const values = getValuesByType(
+    tokens['global']['spacing']['scale'],
+    type,
+    tokens
+  );
+
   console.log(type, values);
-}); */
-
-let sum = getCalculatedValue('{spacing.scale} * 5', tokens);
-
-console.log(sum);
+});

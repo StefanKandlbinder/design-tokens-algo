@@ -27,6 +27,16 @@
         "webpack:///src/*": "${webRoot}/*"
       },
       "sourceMaps": true
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "name": "Attach to port",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"],
+      "localRoot": "${workspaceFolder}",
+      "outFiles": ["${workspaceFolder}/dist"]
     }
   ]
 }
