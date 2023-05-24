@@ -16,11 +16,11 @@ export const getAllKeys = (obj: object): string[] => {
       const currentKeys = [...keys, key];
       const value = obj[key];
 
-      if (typeof value === 'object') {
+      if (typeof value === "object") {
         traverse(value, currentKeys);
-      } else if (key === 'type' && !values.includes(value)) {
+      } else if (key === "type" && !values.includes(value)) {
         currentKeys.pop();
-        values.push(currentKeys.join('.'));
+        values.push(currentKeys.join("."));
       }
     }
   };

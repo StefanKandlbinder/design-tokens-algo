@@ -1,11 +1,11 @@
 // Import stylesheets
-import './style.css';
-import { tokens } from './tests/tokens/testTokens';
-import { getFindings } from './utils/getFindings';
-import { getValuesByType } from './utils/getValuesByType';
-import { getAllKeys } from './utils/getAllKeys';
-import { getCalculatedValue } from './utils/getCalculatedValue';
-import { getNestedValue } from './utils/getNestedValue';
+import "./style.css";
+import { tokens } from "./tests/tokens/testTokens";
+import { getFindings } from "./utils/getFindings";
+import { getValuesByType } from "./utils/getValuesByType";
+import { getAllKeys } from "./utils/getAllKeys";
+import { getCalculatedValue } from "./utils/getCalculatedValue";
+import { getNestedValue } from "./utils/getNestedValue";
 
 // const allKeys = getAllKeys(tokens);
 
@@ -22,8 +22,8 @@ import { getNestedValue } from './utils/getNestedValue';
   // console.log(key, getNestedValue(tokens, result[0]).value);
 }); */
 
-const set = 't-stockholm';
-const types = getFindings(tokens[set], 'type');
+const set = "c-content";
+const types = getFindings(tokens[set], "type");
 
 types.map((type) => {
   const values = getValuesByType(tokens[set], type, tokens);

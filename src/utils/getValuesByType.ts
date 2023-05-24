@@ -1,36 +1,27 @@
-import { getNestedValue } from './getNestedValue';
-import { getCalculatedValue } from './getCalculatedValue';
-import { getAllKeys } from './getAllKeys';
+import { getNestedValue } from "./getNestedValue";
+import { getCalculatedValue } from "./getCalculatedValue";
+import { getAllKeys } from "./getAllKeys";
+import { isCalculation } from "./isCalculation";
 
 const getValue = (value: string, tokens: any): string => {
   const allKeys = getAllKeys(tokens);
 
-  if (value.indexOf('{') === 0 && value.indexOf('}') === value.length - 1) {
+  if (value.indexOf("{") === 0 && value.indexOf("}") === value.length - 1) {
     value = allKeys.filter((item) => {
-      return item.includes(value.replace('{', '').replace('}', ''));
+      return item.includes(value.replace("{", "").replace("}", ""));
     })[0];
 
     value = getNestedValue(
       tokens,
-      value.replace('{', '').replace('}', '')
+      value.replace("{", "").replace("}", "")
     ).value;
 
-    if (
-      value.includes('*') ||
-      value.includes('/') ||
-      value.includes('+') ||
-      value.includes('-')
-    ) {
+    if (isCalculation(value)) {
       value = getCalculatedValue(value, tokens).toString();
     }
 
     // getValue(value, tokens);
-  } else if (
-    value.includes('*') ||
-    value.includes('/') ||
-    value.includes('+') ||
-    value.includes('-')
-  ) {
+  } else if (isCalculation(value)) {
     value = getCalculatedValue(value, tokens).toString();
     // value = value;
   } else {
@@ -62,18 +53,18 @@ export const getValuesByType = (object: any, find: any, tokens: any): any[] => {
     for (const key in obj) {
       const value = obj[key];
 
-      if (typeof value === 'object') {
+      if (typeof value === "object") {
         keys.push(key);
         traverse(value, keys, find, tokens);
         keys.pop();
       } else if (
-        key === 'type' &&
+        key === "type" &&
         value === find &&
         obj.value &&
-        typeof obj.value !== 'object'
+        typeof obj.value !== "object"
       ) {
         values.push({
-          name: [...keys].join('.'),
+          name: [...keys].join("."),
           value: getValue(obj.value, tokens),
           rawValue: obj.value,
           type: value,

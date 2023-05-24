@@ -5,5 +5,5 @@
  * @returns {any} - The nested value if found, otherwise undefined.
  */
 export const getNestedValue = (obj: any, keys: string): any => {
-  return keys.split('.').reduce((acc: any, key: any) => acc && acc[key], obj);
+  return keys.split(".").reduce((acc: any, key: any) => acc && acc[key], obj);
 };
